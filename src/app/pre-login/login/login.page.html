@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-no-padding">
+  <div id="sign-in-button"></div>
+  <div class="main">
+    <ion-card no-margin>
+      <ion-card-content>
+        <ion-row class="row">
+          <div class="fire-logo">
+            <img src="../../assets/images/covid-icon.png" class="img-logo">
+            <ion-text class="ion-padding">
+              <h2 class="ion-no-margin ion-margin-vertical ion-text-center">Covid Tracer</h2>
+            </ion-text>
+          </div>
+        </ion-row>
+        <ion-grid class="phoneAuthGrid">
+          <ion-row>
+            <ion-col size="4">
+              <ion-select class="phoneCountry" value="brown" okText="Okay" cancelText="Dismiss"
+                (ionChange)="countryCodeChange($event)" [value]="countryCode">
+                <ion-select-option *ngFor="let country of countryData" value={{country.dialCode}}>
+                  {{country.dialCode + ' ' + country.name}}</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="8">
+              <ion-input clearInput type="test" placeholder="Your Number" [(ngModel)]="phoneNo"
+                class="input ion-padding-horizontal" clear-input="true"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block" (click)="signinWithPhoneNumber($event)" color="primary"
+                class="btn-transition">
+                Sign in with Phone number</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+  </div>

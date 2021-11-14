@@ -1,0 +1,7 @@
+{
+  "name": "corona-track",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

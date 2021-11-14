@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>List Of People Met</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <div *ngIf="peopleMet.length > 0">
+    <div *ngFor="let people of peopleMet">
+      <ion-item>
+        <ion-label>
+          <h2>{{people.name}}</h2>
+          <h3>{{people.dateOfMeeting}}</h3>
+          <h4>{{people.phone}}</h4>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+  <div  class="ion-text-center" *ngIf="peopleMet.length === 0">
+    <ion-label>
+      You did not meet anyone!
+    </ion-label>
+  </div>
+</ion-list>
+</ion-content>

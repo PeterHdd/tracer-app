@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Add Person</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()"  fill="solid" color="primary">
+        <ion-icon slot="end" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+  <form [formGroup]="addPersonForm" (ngSubmit)="onFormSubmit()">
+    
+    <!--username-->
+    <div>
+      <ion-item lines="none">
+      <ion-label color="primary"><b>Name</b></ion-label>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10">
+            <div>
+              <ion-input type="text" class="input-design" placeholder="Enter Name" formControlName="name"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!--date-->
+    <div>
+      <ion-item lines="none">
+      <ion-label color="primary"><b>Date of Meeting</b></ion-label>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10">
+            <div>
+              <ion-datetime displayFormat="DD/MM/YYYY" class="input-design" placeholder="Select Date" formControlName="dateOfMeeting"></ion-datetime>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!--age-->
+    <div>
+      <ion-item lines="none">
+      <ion-label color="primary"><b>Age</b></ion-label>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10">
+            <div>
+              <ion-input type="number" class="input-design" placeholder="Enter Age" formControlName="personAge"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!--location-->
+    <div>
+      <ion-item lines="none">
+      <ion-label color="primary"><b>Location</b></ion-label>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10">
+            <div>
+              <ion-input disabled="true" type="text" class="input-design" placeholder="Enter Location" formControlName="locationOfMeeting"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div>
+      <ion-item lines="none">
+        <ion-label color="primary"><b>Phone Number</b></ion-label>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10">
+            <div>
+              <ion-input type="tel" class="input-design" placeholder="Enter Number" formControlName="phone"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+
+
+    <div class="ion-text-center">
+      <ion-button expand="full" type="submit" [disabled]="!addPersonForm.valid"><b>Submit</b></ion-button>
+      <ion-button expand="full" (click)="resetForm()"><b>Cancel</b></ion-button>
+    </div>
+
+  </form>
+  </div>
+</ion-content>

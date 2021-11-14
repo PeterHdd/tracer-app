@@ -1,0 +1,15 @@
+//plugins
+
+ionic cordova plugin add cordova-plugin-splashscreen  
+npm install @ionic-native/splash-screen  
+
+ionic cordova plugin add cordova-plugin-geolocation
+npm install @ionic-native/geolocation
+
+ionic cordova plugin add cordova-plugin-nativegeocoder
+npm install @ionic-native/native-geocoder
+
+npm install @ionic-native/core
+npm install @angular/fire firebase
+
+ionic cordova platform add android
